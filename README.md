@@ -101,10 +101,3 @@ Some ideas for future improvements:
 
 ## Contributing
 If you'd like to contribute, feel free to fork the repository and submit a pull request. Please ensure that your code follows the project structure and is well-documented.
-
-## License
-This project is licensed under the MIT License. See the `LICENSE` file for details.
-
----
-
-This `README` provides an overview, explains the design patterns used, and includes instructions to run the project. You can further customize it based on your project's specific requirements.
