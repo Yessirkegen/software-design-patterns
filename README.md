@@ -1,103 +1,73 @@
-# software-design-pattern
+Design Patterns Implementation in Java
 
-# Cinema Management System
+This project contains Java implementations of seven common design patterns: Adapter, Bridge, Composite, Decorator, Facade, Flyweight, and Proxy. Each pattern is demonstrated through a specific scenario and organized within a single Java file for ease of use.
+Table of Contents
 
-This project is a simple implementation of a **Cinema Management System** in Java using the **five major creational design patterns**: **Singleton**, **Factory Method**, **Abstract Factory**, **Builder**, and **Prototype**. The project serves as an example of how to use each pattern in a practical context.
+    Introduction
+    Design Patterns
+        1. Adapter Pattern
+        2. Bridge Pattern
+        3. Composite Pattern
+        4. Decorator Pattern
+        5. Facade Pattern
+        6. Flyweight Pattern
+        7. Proxy Pattern
+    Setup and Usage
+    Contributing
+    License
 
-## Project Overview
+Introduction
 
-The Cinema Management System manages various operations such as:
-- Movies and their types (e.g., Regular, IMAX)
-- User Interface (UI) elements based on themes
-- Complex ticket booking
-- Movie schedules
+Design patterns are reusable solutions to common problems in software design. This project aims to provide a clear understanding of these patterns through practical Java implementations. Each section includes a brief overview and example usage.
+Design Patterns
+1. Adapter Pattern
 
-Each design pattern is used to address a specific aspect of the system:
+The Adapter pattern allows an existing class to work with incompatible interfaces. In this implementation, an audio player that plays MP3 files is adapted to support WAV and AAC files using an adapter class.
+2. Bridge Pattern
 
-1. **Singleton Pattern**: Manages global system configuration.
-2. **Factory Method Pattern**: Handles the creation of different types of movies.
-3. **Abstract Factory Pattern**: Creates user interface components based on different themes.
-4. **Builder Pattern**: Constructs complex ticket bookings step-by-step.
-5. **Prototype Pattern**: Manages and clones movie schedules.
+The Bridge pattern separates an abstraction from its implementation, allowing them to vary independently. In this case, a universal remote control system can control different devices (TV, DVD, Sound System) from various manufacturers.
+3. Composite Pattern
 
-## Design Patterns Used
+The Composite pattern lets you compose objects into tree structures to represent part-whole hierarchies. Here, a restaurant menu can contain menu items or other sub-menus, allowing for a flexible structure.
+4. Decorator Pattern
 
-### 1. Singleton Pattern: System Configuration
-- The `CinemaConfig` class ensures that only one instance of global configuration settings (e.g., cinema name, number of screens) exists throughout the application.
-  
-### 2. Factory Method Pattern: Movie Creation
-- The `MovieFactory` interface and its concrete implementations (`RegularMovieFactory`, `IMAXMovieFactory`) handle the creation of different types of movies, such as regular movies and IMAX movies.
+The Decorator pattern allows behavior to be added to individual objects, either statically or dynamically, without affecting the behavior of other objects from the same class. This implementation allows customers to customize pizzas with various toppings.
+5. Facade Pattern
 
-### 3. Abstract Factory Pattern: User Interface Generation
-- The `UIFactory` interface is used to generate UI components for different themes (`DarkThemeFactory`, `LightThemeFactory`), ensuring consistent design for buttons, text fields, etc.
+The Facade pattern provides a simplified interface to a complex subsystem. In this example, a smart home system allows users to control various devices (lights, thermostat, security system) through a single interface.
+6. Flyweight Pattern
 
-### 4. Builder Pattern: Ticket Booking
-- The `TicketBookingBuilder` class builds a `TicketBooking` object by configuring options like movie title, seat number, and snack combos.
+The Flyweight pattern minimizes memory usage by sharing objects. In this case, a text editor efficiently renders characters by reusing shared character objects for similar properties.
+7. Proxy Pattern
 
-### 5. Prototype Pattern: Movie Schedule
-- The `MovieSchedule` interface and its implementation (`StandardSchedule`) provide a cloning mechanism to copy and modify movie schedules without affecting the original.
+The Proxy pattern provides a surrogate or placeholder for another object to control access to it. This implementation allows video lectures to be loaded only when they are played for the first time, enhancing performance.
+Setup and Usage
 
-## Getting Started
+To run the implementations:
 
-### Prerequisites
-- Java Development Kit (JDK) 8 or above
-- A Java IDE (e.g., IntelliJ, Eclipse) or a text editor
+    Clone the repository:
 
-### Installation
+    bash
 
-1. **Clone the Repository**:
+git clone <repository-url>
+cd <repository-directory>
 
-   ```bash
-   git clone https://github.com/USERNAME/software-design-patterns.git
-   ```
+Compile the code:
 
-2. **Navigate to the Project Directory**:
+bash
 
-   ```bash
-   cd software-design-patterns
-   ```
+javac DesignPatterns.java
 
-3. **Compile and Run**:
+Run the application:
 
-   - Open the project in your preferred Java IDE.
-   - Compile and run the `CinemaManagementApp` class.
+bash
 
-### Running the Application
+    java DesignPatterns
 
-- The main file is `CinemaManagementApp.java`, which demonstrates the use of each design pattern.
-- You can run the application using the `main` method provided in `CinemaManagementApp.java`.
+Each design pattern is demonstrated in the main method of its respective implementation. You can modify or expand the examples as needed.
+Contributing
 
-### Example Output
+Contributions are welcome! If you have suggestions for improvements or additional patterns, please open an issue or submit a pull request.
+License
 
-The sample output for the project would look like this:
-
-```
-Cinema Name: Starlight Cinemas
-Number of Screens: 5
-Movie: Inception, Type: Regular Movie
-Rendering a button in Dark Theme
-Booking: Movie: Inception, Seat: A1, Snack Combo: Popcorn and Soda
-Schedule: Movie - Inception, Time - 18:00
-Cinema Management System initialized.
-```
-
-## Project Structure
-
-The project consists of the following core classes:
-
-- **CinemaManagementApp**: Main class to run the application.
-- **Singleton Pattern**: `CinemaConfig` class.
-- **Factory Method Pattern**: `Movie`, `RegularMovie`, `IMAXMovie`, and `MovieFactory` classes.
-- **Abstract Factory Pattern**: `UIFactory`, `Button`, `DarkThemeFactory`, `LightThemeFactory` classes.
-- **Builder Pattern**: `TicketBooking` and `TicketBookingBuilder` classes.
-- **Prototype Pattern**: `MovieSchedule` and `StandardSchedule` classes.
-
-## Future Enhancements
-Some ideas for future improvements:
-1. Implement additional movie types (e.g., `4DMovie`).
-2. Expand the UI generation with more themes and UI components.
-3. Add more complex configurations for `TicketBooking` like loyalty discounts or membership points.
-4. Implement a `Facade` pattern to simplify interactions between subsystems.
-
-## Contributing
-If you'd like to contribute, feel free to fork the repository and submit a pull request. Please ensure that your code follows the project structure and is well-documented.
+This project is licensed under the MIT License. See the LICENSE file for details.
